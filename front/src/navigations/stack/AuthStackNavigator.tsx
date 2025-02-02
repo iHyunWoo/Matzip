@@ -28,7 +28,7 @@ function AuthStackNavigator() {
       headerTitleStyle: {
         fontSize: 15,
       },
-      headerTintColor: 'black'
+      headerTintColor: colors.BLACK
     }}>
       <Stack.Screen 
         name={authStackNavigations.AUTH_HOME} 
