@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
-import {Dimensions, Pressable, StyleSheet, Text, TextInput, TextInputProps, View} from 'react-native';
+import React, { ForwardedRef, forwardRef, useRef } from 'react';
+import { Dimensions, Pressable, StyleSheet, Text, TextInput, TextInputProps, View } from 'react-native';
 import { colors } from '../constants';
+import { mergeRefs } from '../utils';
 
 interface InputFieldProps extends TextInputProps {
   disabled?: boolean
@@ -10,37 +11,38 @@ interface InputFieldProps extends TextInputProps {
 
 const deviceHeight = Dimensions.get('screen').height;
 
-function InputField({
+const InputField = forwardRef(({
   disabled = false,
   error,
   touched,
-   ...props
-  }: InputFieldProps) {
-    const innerRef = useRef<TextInput | null>(null)
+  ...props
+}: InputFieldProps,
+  ref?: ForwardedRef<TextInput>) => {
+  const innerRef = useRef<TextInput | null>(null)
 
-    const handlePressInput = () => {
-      innerRef.current?.focus()
-    }
+  const handlePressInput = () => {
+    innerRef.current?.focus()
+  }
 
   return (
     <Pressable onPress={handlePressInput}>
       <View style={[styles.container, disabled && styles.disabled, touched && Boolean(error) && styles.inputError]}>
         <TextInput
-          ref={innerRef}
+          ref={ref? mergeRefs(innerRef, ref) : innerRef}
           editable={!disabled}
           placeholderTextColor={colors.GRAY_500}
           style={[styles.input, disabled && styles.disabled]}
           autoCapitalize='none'
           spellCheck={false}
           autoCorrect={false}
-          {...props} 
+          {...props}
         />
 
         {touched && Boolean(error) && <Text style={styles.error}>{error}</Text>}
       </View>
     </Pressable>
   )
-}
+})
 
 const styles = StyleSheet.create({
   container: {
