@@ -16,7 +16,7 @@ function validateUser(values: UserInformation) {
   }
 
   if (!(values.password.length >= 8 && values.password.length <= 20)) {
-    errors.password = '비밀번호는 8~20자 사이로 입력해주세요.'
+    errors.password = '비밀번호는 8~20자의 숫자와 영문으로 입력해주세요.'
   }
 
   return errors

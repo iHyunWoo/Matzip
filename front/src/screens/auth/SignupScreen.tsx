@@ -5,10 +5,12 @@ import useForm from '../../hooks/useForm';
 import CustomButton from '../../components/CustomButton';
 import { validateSignup } from '../../utils';
 import { TextInput } from 'react-native-gesture-handler';
+import useAuth from '../../hooks/queries/useAuth';
 
 function SignupScreen() {
   const passwordRef = useRef<TextInput | null>(null)
   const passwordConfirmRef = useRef<TextInput | null>(null)
+  const {signupMutation, loginMutation} = useAuth()
 
   const signup = useForm({
     initialValue: {
@@ -21,6 +23,10 @@ function SignupScreen() {
 
   const handleSubmit = () => {
     console.log('signup.values', signup.values)
+    const {email, password} = signup.values
+    signupMutation.mutate(signup.values, {
+      onSuccess: () => loginMutation.mutate({email, password})
+    })
   }
 
   return (
@@ -61,6 +67,7 @@ function SignupScreen() {
       </View>
       <CustomButton
         label='회원가입'
+        onPress={handleSubmit}
       />
     </SafeAreaView>
   )
