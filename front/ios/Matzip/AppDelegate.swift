@@ -14,7 +14,8 @@ class AppDelegate: RCTAppDelegate {
     // They will be passed down to the ViewController used by React Native.
     self.initialProps = [:]
     
-    GMSServices.provideAPIKey("")
+    let GOOGLE_MAP_API_KEY = RNCConfig.env(for: "GOOGLE_MAP_API_KEY") ?? ""
+    GMSServices.provideAPIKey(GOOGLE_MAP_API_KEY)
 
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }

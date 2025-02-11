@@ -9,22 +9,24 @@
 /* Begin PBXBuildFile section */
 		127596908B381803FB781EF4 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		163119A6759A83652DDE4A1B /* libPods-Matzip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A574C5ECF7EF6BE948A1CED /* libPods-Matzip.a */; };
+		1B79CA5CB20F0D7642794698 /* libPods-Matzip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDA424265C2DB955AE8EDDF /* libPods-Matzip.a */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BF528594880481228CAA42B /* Pods-Matzip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matzip.release.xcconfig"; path = "Target Support Files/Pods-Matzip/Pods-Matzip.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Matzip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matzip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Matzip/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Matzip/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = Matzip/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		2A574C5ECF7EF6BE948A1CED /* libPods-Matzip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Matzip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Matzip/AppDelegate.swift; sourceTree = "<group>"; };
+		792D543F791EEA2F80DAEBB0 /* Pods-Matzip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matzip.debug.xcconfig"; path = "Target Support Files/Pods-Matzip/Pods-Matzip.debug.xcconfig"; sourceTree = "<group>"; };
+		80C174F58B6874938194681E /* Pods-Matzip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matzip.release.xcconfig"; path = "Target Support Files/Pods-Matzip/Pods-Matzip.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Matzip/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8A791BA3F0195CD6B29FAC92 /* Pods-Matzip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matzip.debug.xcconfig"; path = "Target Support Files/Pods-Matzip/Pods-Matzip.debug.xcconfig"; sourceTree = "<group>"; };
+		AB718A132D5B138D00A98B6B /* Matzip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Matzip-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB718A142D5B162900A98B6B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EFDA424265C2DB955AE8EDDF /* libPods-Matzip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Matzip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				163119A6759A83652DDE4A1B /* libPods-Matzip.a in Frameworks */,
+				1B79CA5CB20F0D7642794698 /* libPods-Matzip.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				2A574C5ECF7EF6BE948A1CED /* libPods-Matzip.a */,
+				EFDA424265C2DB955AE8EDDF /* libPods-Matzip.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -70,6 +72,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				AB718A142D5B162900A98B6B /* Config.xcconfig */,
+				AB718A132D5B138D00A98B6B /* Matzip-Bridging-Header.h */,
 				13B07FAE1A68108700A75B9A /* Matzip */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -92,8 +96,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8A791BA3F0195CD6B29FAC92 /* Pods-Matzip.debug.xcconfig */,
-				0BF528594880481228CAA42B /* Pods-Matzip.release.xcconfig */,
+				792D543F791EEA2F80DAEBB0 /* Pods-Matzip.debug.xcconfig */,
+				80C174F58B6874938194681E /* Pods-Matzip.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -105,13 +109,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Matzip" */;
 			buildPhases = (
-				D8629C909560595B63227669 /* [CP] Check Pods Manifest.lock */,
+				3D23A3BF9290886974D7FF39 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				927E17B397288A03E8B780F6 /* [CP] Embed Pods Frameworks */,
-				41D3B9512D5F35ECF679A74D /* [CP] Copy Pods Resources */,
+				3285B2AA8C63A6F11C8D1974 /* [CP] Embed Pods Frameworks */,
+				B889E364AD16EA9B32CBE0A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,24 +187,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		41D3B9512D5F35ECF679A74D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Matzip/Pods-Matzip-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Matzip/Pods-Matzip-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Matzip/Pods-Matzip-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		927E17B397288A03E8B780F6 /* [CP] Embed Pods Frameworks */ = {
+		3285B2AA8C63A6F11C8D1974 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -217,7 +204,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Matzip/Pods-Matzip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D8629C909560595B63227669 /* [CP] Check Pods Manifest.lock */ = {
+		3D23A3BF9290886974D7FF39 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,6 +226,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B889E364AD16EA9B32CBE0A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Matzip/Pods-Matzip-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Matzip/Pods-Matzip-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Matzip/Pods-Matzip-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -255,7 +259,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A791BA3F0195CD6B29FAC92 /* Pods-Matzip.debug.xcconfig */;
+			baseConfigurationReference = 792D543F791EEA2F80DAEBB0 /* Pods-Matzip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -275,6 +279,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Matzip;
+				SWIFT_OBJC_BRIDGING_HEADER = "Matzip-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -283,7 +288,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BF528594880481228CAA42B /* Pods-Matzip.release.xcconfig */;
+			baseConfigurationReference = 80C174F58B6874938194681E /* Pods-Matzip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -302,6 +307,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Matzip;
+				SWIFT_OBJC_BRIDGING_HEADER = "Matzip-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -309,6 +315,7 @@
 		};
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB718A142D5B162900A98B6B /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -389,6 +396,7 @@
 		};
 		83CBBA211A601CBA00E9B192 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB718A142D5B162900A98B6B /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
