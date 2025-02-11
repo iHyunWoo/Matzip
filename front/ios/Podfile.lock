@@ -5,6 +5,30 @@ PODS:
   - FBLazyVector (0.77.0)
   - fmt (11.0.2)
   - glog (0.3.5)
+  - Google-Maps-iOS-Utils (4.2.2):
+    - Google-Maps-iOS-Utils/Clustering (= 4.2.2)
+    - Google-Maps-iOS-Utils/Geometry (= 4.2.2)
+    - Google-Maps-iOS-Utils/GeometryUtils (= 4.2.2)
+    - Google-Maps-iOS-Utils/Heatmap (= 4.2.2)
+    - Google-Maps-iOS-Utils/QuadTree (= 4.2.2)
+    - GoogleMaps (~> 7.3)
+  - Google-Maps-iOS-Utils/Clustering (4.2.2):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps (~> 7.3)
+  - Google-Maps-iOS-Utils/Geometry (4.2.2):
+    - GoogleMaps (~> 7.3)
+  - Google-Maps-iOS-Utils/GeometryUtils (4.2.2):
+    - GoogleMaps (~> 7.3)
+  - Google-Maps-iOS-Utils/Heatmap (4.2.2):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps (~> 7.3)
+  - Google-Maps-iOS-Utils/QuadTree (4.2.2):
+    - GoogleMaps (~> 7.3)
+  - GoogleMaps (7.4.0):
+    - GoogleMaps/Maps (= 7.4.0)
+  - GoogleMaps/Base (7.4.0)
+  - GoogleMaps/Maps (7.4.0):
+    - GoogleMaps/Base
   - hermes-engine (0.77.0):
     - hermes-engine/Pre-built (= 0.77.0)
   - hermes-engine/Pre-built (0.77.0)
@@ -1212,72 +1236,14 @@ PODS:
     - ReactCommon/turbomodule/core
   - react-native-encrypted-storage (4.0.3):
     - React-Core
+  - react-native-google-maps (1.8.3):
+    - Google-Maps-iOS-Utils (= 4.2.2)
+    - GoogleMaps (= 7.4.0)
+    - React-Core
+  - react-native-maps (1.8.3):
+    - React-Core
   - react-native-safe-area-context (5.1.0):
-    - DoubleConversion
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.11.18.00)
-    - RCTRequired
-    - RCTTypeSafety
     - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - react-native-safe-area-context/common (= 5.1.0)
-    - react-native-safe-area-context/fabric (= 5.1.0)
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
-  - react-native-safe-area-context/common (5.1.0):
-    - DoubleConversion
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.11.18.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
-  - react-native-safe-area-context/fabric (5.1.0):
-    - DoubleConversion
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.11.18.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - react-native-safe-area-context/common
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
   - React-nativeconfig (0.77.0)
   - React-NativeModulesApple (0.77.0):
     - glog
@@ -1717,29 +1683,6 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNScreens/common (= 4.6.0)
-    - Yoga
-  - RNScreens/common (4.6.0):
-    - DoubleConversion
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.11.18.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-RCTImage
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
     - Yoga
   - SocketRocket (0.7.1)
   - Yoga (0.0.0)
@@ -1784,6 +1727,8 @@ DEPENDENCIES:
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - react-native-encrypted-storage (from `../node_modules/react-native-encrypted-storage`)
+  - react-native-google-maps (from `../node_modules/react-native-maps`)
+  - react-native-maps (from `../node_modules/react-native-maps`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -1822,6 +1767,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Google-Maps-iOS-Utils
+    - GoogleMaps
     - SocketRocket
 
 EXTERNAL SOURCES:
@@ -1900,6 +1847,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
   react-native-encrypted-storage:
     :path: "../node_modules/react-native-encrypted-storage"
+  react-native-google-maps:
+    :path: "../node_modules/react-native-maps"
+  react-native-maps:
+    :path: "../node_modules/react-native-maps"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-nativeconfig:
@@ -1978,8 +1929,10 @@ SPEC CHECKSUMS:
   FBLazyVector: 2bc03a5cf64e29c611bbc5d7eb9d9f7431f37ee6
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: eb93e2f488219332457c3c4eafd2738ddc7e80b8
+  Google-Maps-iOS-Utils: f77eab4c4326d7e6a277f8e23a0232402731913a
+  GoogleMaps: 032f676450ba0779bd8ce16840690915f84e57ac
   hermes-engine: 1f783c3d53940aed0d2c84586f0b7a85ab7827ef
-  RCT-Folly: e78785aa9ba2ed998ea4151e314036f6c49e6d82
+  RCT-Folly: 36fe2295e44b10d831836cc0d1daec5f8abcf809
   RCTDeprecation: f5c19ebdb8804b53ed029123eb69914356192fc8
   RCTRequired: 6ae6cebe470486e0e0ce89c1c0eabb998e7c51f4
   RCTTypeSafety: 50d6ec72a3d13cf77e041ff43a0617050fb98e3f
@@ -2009,17 +1962,19 @@ SPEC CHECKSUMS:
   React-Mapbuffer: 6993c785c22a170c02489bc78ed207814cbd700f
   React-microtasksnativemodule: 19230cd0933df6f6dc1336c9a9edc382d62638ae
   react-native-encrypted-storage: db300a3f2f0aba1e818417c1c0a6be549038deb7
-  react-native-safe-area-context: 6b85173d2cee963d5232ac2fd260e8ebd63273dc
+  react-native-google-maps: e63e064f77df4af32655d05fbcd2f1ad1078db4a
+  react-native-maps: a5f431a3eaaef69f2e6f8d39901fb3f2e9de931e
+  react-native-safe-area-context: 04803a01f39f31cc6605a5531280b477b48f8a88
   React-nativeconfig: cd0fbb40987a9658c24dab5812c14e5522a64929
   React-NativeModulesApple: 45187d13c68d47250a7416b18ff082c7cc07bff7
   React-perflogger: 15a7bcb6c46eae8a981f7add8c9f4172e2372324
   React-performancetimeline: 631ef8ac4246bca49c07b88cd1ad85ce460b97bf
   React-RCTActionSheet: 25eb72eabade4095bfaf6cd9c5c965c76865daa8
   React-RCTAnimation: 04c987fa858fa16169f543d29edb4140bd35afa9
-  React-RCTAppDelegate: b2707904e4f8ad92fd052e62684bf0c3b88381cc
+  React-RCTAppDelegate: 874e34651ed9fdf7b66d02970de16910791b3738
   React-RCTBlob: 1f214a7211632515805dd1f1b81fac70d12f812d
-  React-RCTFabric: 10f8b1ceac3c2feb3ddbede8a70c3410c68d79fe
-  React-RCTFBReactNativeSpec: 60d72b45a150ca35748b9a77028674b1e56a2e43
+  React-RCTFabric: a7e90eb2d21d3019f7d7f2fc9190211623f183b1
+  React-RCTFBReactNativeSpec: 7bc548f75e94467352380681dc9d5384eacb91b8
   React-RCTImage: e516d72739797fb7c1dac5c691f02a0f5445c290
   React-RCTLinking: 1e5554afe4f959696ad3285738c1510f2592f220
   React-RCTNetwork: 65e1e52c8614dcab342fa1eaec750ca818160e74
@@ -2039,13 +1994,13 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: 3d947e9d62f351c06c71497e1be897e6006dc303
   ReactCodegen: 1baa534318b19e95fb0f02db0a1ae1e3c271944d
   ReactCommon: 6014af4276bb2debc350e2620ef1bd856b4d981c
-  RNCMaskedView: 18c76ebdf9752bb75652829f99f6c3d1318cc864
-  RNGestureHandler: 22ab0e79b8ed145c4bd4a4f85088f5d711f13580
-  RNReanimated: ef80cf675203a39bb5e5464234cb08a0f0040ac2
-  RNScreens: c8c0b69f667891d474ad1229054d514f06778772
+  RNCMaskedView: 6d4bf14f158d1a93484edf30850cbbd7ccbb8668
+  RNGestureHandler: a883459e2f268dde0af479e0d6e73bc8662a3502
+  RNReanimated: 10df3198b328f8a0677fdaaa2b449db53cdbff40
+  RNScreens: e9bb7c3063237983e75d01bb45ce591cc4e7afc2
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 78d74e245ed67bb94275a1316cdc170b9b7fe884
 
-PODFILE CHECKSUM: 9278a447f0bcb14de58dfbef4ec781e96be47f99
+PODFILE CHECKSUM: cbcf2389c107c917b067bb201c52e1bed674d977
 
 COCOAPODS: 1.16.2

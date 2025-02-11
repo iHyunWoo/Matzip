@@ -15,10 +15,16 @@ if linkage != nil
 end
 
 target 'Matzip' do
+    # React Native Maps dependencies
+
+    rn_maps_path = '../node_modules/react-native-maps'
+    pod 'react-native-google-maps', :path => rn_maps_path
+
   config = use_native_modules!
 
   use_react_native!(
     :path => config[:reactNativePath],
+    :new_arch_enabled => false,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
