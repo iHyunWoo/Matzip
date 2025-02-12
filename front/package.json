@@ -12,6 +12,7 @@
     "ios:prod": "react-native run-ios --scheme Production"
   },
   "dependencies": {
+    "@react-native-community/geolocation": "^3.4.0",
     "@react-native-masked-view/masked-view": "^0.3.2",
     "@react-navigation/drawer": "^7.1.1",
     "@react-navigation/native": "^7.0.14",
@@ -24,6 +25,7 @@
     "react-native-encrypted-storage": "^4.0.3",
     "react-native-gesture-handler": "^2.22.1",
     "react-native-maps": "1.8.3",
+    "react-native-permissions": "^5.2.5",
     "react-native-reanimated": "^3.16.7",
     "react-native-safe-area-context": "^5.1.0",
     "react-native-screens": "^4.6.0"
