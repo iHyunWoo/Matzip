@@ -11,6 +11,8 @@ import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {MainDrawerParamList} from '../../navigations/drawer/MainDrawerNavigator.tsx';
 import useUserLocation from "../../hooks/useUserLocation.ts";
 import usePermissions from "../../hooks/usePermissions.ts";
+import Ionicons from '@react-native-vector-icons/ionicons';
+import MaterialDesignIcons from '@react-native-vector-icons/material-design-icons';
 
 type Navigation = CompositeNavigationProp<
   StackNavigationProp<MapStackParamList>,
@@ -51,11 +53,11 @@ function MapHomeScreen() {
       <Pressable
         style={[styles.drawerButton, {top: inset.top || 20}]}
         onPress={() => navigation.openDrawer()}>
-        <Text>버튼</Text>
+        <Ionicons name="menu" color={colors.WHITE} size={25}/>
       </Pressable>
       <View style={styles.buttonList}>
         <Pressable style={styles.mapButton} onPress={handlePressUserLocation}>
-          <Text>내 위치</Text>
+          <MaterialDesignIcons name="crosshairs-gps" color={colors.WHITE} size={25}/>
         </Pressable>
       </View>
     </>
@@ -89,6 +91,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     height: 48,
     width: 48,
+    borderRadius: 24,
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: colors.BLACK,

@@ -32,5 +32,5 @@ export default function useAppState() {
     };
   }, []);
 
-  return {isComeback}
+  return {isComeback, appStateVisible};
 }
