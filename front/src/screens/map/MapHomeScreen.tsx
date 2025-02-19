@@ -13,6 +13,7 @@ import useUserLocation from "../../hooks/useUserLocation.ts";
 import usePermissions from "../../hooks/usePermissions.ts";
 import Ionicons from '@react-native-vector-icons/ionicons';
 import MaterialDesignIcons from '@react-native-vector-icons/material-design-icons';
+import mapStyle from "../../style/mapStyle.ts";
 
 type Navigation = CompositeNavigationProp<
   StackNavigationProp<MapStackParamList>,
@@ -49,6 +50,7 @@ function MapHomeScreen() {
         showsUserLocation
         followsUserLocation
         showsMyLocationButton={false}
+        customMapStyle={mapStyle}
       />
       <Pressable
         style={[styles.drawerButton, {top: inset.top || 20}]}
