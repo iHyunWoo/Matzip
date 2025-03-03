@@ -3,7 +3,6 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text,
   TextInput,
   View,
 } from 'react-native';
@@ -14,13 +13,15 @@ import InputField from '../../components/InputField.tsx';
 import Octicons from '@react-native-vector-icons/octicons';
 import CustomButton from '../../components/CustomButton.tsx';
 import useForm from '../../hooks/useForm.ts';
-import {validateAddPost} from '../../utils';
+import {getDateWithSeparator, validateAddPost} from '../../utils';
 import AddPostHeaderRight from '../../components/AddPostHeaderRight.tsx';
 import useMutateCreatePost from '../../hooks/queries/useMutateCreatePost.ts';
 import {MarkerColor} from '../../types/domain.ts';
 import useGetAddress from '../../hooks/useGetAddress.ts';
 import MarkerSelector from '../../components/MarkerSelector.tsx';
 import ScoreInput from '../../components/ScoreInput.tsx';
+import DatePickerOption from '../../components/DatePickerOption.tsx';
+import useModal from "../../hooks/useModal.ts";
 
 type AddPostScreenProps = StackScreenProps<
   MapStackParamList,
@@ -41,11 +42,15 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
 
   const [markerColor, setMarkerColor] = useState<MarkerColor>('RED');
   const [score, setScore] = useState(5);
+  const [date, setDate] = useState(new Date());
+  const [isPicked, setIsPicked] = useState(false);
+
+  const dateOption = useModal();
   const address = useGetAddress(location);
 
   const handleSubmit = () => {
     const body = {
-      date: new Date(),
+      date,
       title: addPost.values.title,
       description: addPost.values.description,
       color: markerColor,
@@ -72,6 +77,16 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
     setScore(score);
   };
 
+  const handleChangeDate = (pickedDate: Date) => {
+    setDate(pickedDate);
+  };
+
+  const handleConfirmDate = () => {
+    setIsPicked(true);
+    dateOption.hide();
+  };
+
+
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => AddPostHeaderRight(handleSubmit),
@@ -89,31 +104,44 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
               <Octicons name="location" size={16} color={colors.GRAY_500} />
             }
           />
+
+          <CustomButton
+            variant="outlined"
+            size="large"
+            label={isPicked ? getDateWithSeparator(date, '. ') : '날짜 선택'}
+            onPress={dateOption.show}
+          />
+          <InputField
+            placeholder="제목을 입력하세요."
+            error={addPost.errors.title}
+            touched={addPost.touched.title}
+            returnKeyType="next"
+            onSubmitEditing={() => descriptionRef.current?.focus()}
+            {...addPost.getTextInputProps('title')}
+          />
+          <InputField
+            ref={descriptionRef}
+            placeholder="기록하고 싶은 내용을 입력하세요. (선택)"
+            error={addPost.errors.description}
+            touched={addPost.touched.description}
+            multiline
+            returnKeyType="next"
+            {...addPost.getTextInputProps('description')}
+          />
+          <MarkerSelector
+            markerColor={markerColor}
+            onPressMarker={handleSelectMarker}
+            score={score}
+          />
+          <ScoreInput score={score} onChangeScore={handleChangeScore} />
+
+          <DatePickerOption
+            isVisible={dateOption.isVisible}
+            date={date}
+            onChangeDate={handleChangeDate}
+            onConfirmDate={handleConfirmDate}
+          />
         </View>
-        <CustomButton variant="outlined" size="large" label="날짜 선택" />
-        <InputField
-          placeholder="제목을 입력하세요."
-          error={addPost.errors.title}
-          touched={addPost.touched.title}
-          returnKeyType="next"
-          onSubmitEditing={() => descriptionRef.current?.focus()}
-          {...addPost.getTextInputProps('title')}
-        />
-        <InputField
-          ref={descriptionRef}
-          placeholder="기록하고 싶은 내용을 입력하세요. (선택)"
-          error={addPost.errors.description}
-          touched={addPost.touched.description}
-          multiline
-          returnKeyType="next"
-          {...addPost.getTextInputProps('description')}
-        />
-        <MarkerSelector
-          markerColor={markerColor}
-          onPressMarker={handleSelectMarker}
-          score={score}
-        />
-        <ScoreInput score={score} onChangeScore={handleChangeScore} />
       </ScrollView>
     </SafeAreaView>
   );
