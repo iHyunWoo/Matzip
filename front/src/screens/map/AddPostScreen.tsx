@@ -15,10 +15,12 @@ import Octicons from '@react-native-vector-icons/octicons';
 import CustomButton from '../../components/CustomButton.tsx';
 import useForm from '../../hooks/useForm.ts';
 import {validateAddPost} from '../../utils';
-import HeaderButton from '../../components/HeaderButton.tsx';
 import AddPostHeaderRight from '../../components/AddPostHeaderRight.tsx';
 import useMutateCreatePost from '../../hooks/queries/useMutateCreatePost.ts';
 import {MarkerColor} from '../../types/domain.ts';
+import useGetAddress from '../../hooks/useGetAddress.ts';
+import MarkerSelector from '../../components/MarkerSelector.tsx';
+import ScoreInput from '../../components/ScoreInput.tsx';
 
 type AddPostScreenProps = StackScreenProps<
   MapStackParamList,
@@ -39,7 +41,7 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
 
   const [markerColor, setMarkerColor] = useState<MarkerColor>('RED');
   const [score, setScore] = useState(5);
-  const [address, setAddress] = useState('');
+  const address = useGetAddress(location);
 
   const handleSubmit = () => {
     const body = {
@@ -55,10 +57,19 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
       {address, ...location, ...body},
       {
         onSuccess: () => navigation.goBack(),
-        onError: (error) => {
-          console.log(error);}
+        onError: error => {
+          console.log(error);
+        },
       },
     );
+  };
+
+  const handleSelectMarker = (name: MarkerColor) => {
+    setMarkerColor(name);
+  };
+
+  const handleChangeScore = (score: number) => {
+    setScore(score);
   };
 
   useEffect(() => {
@@ -72,7 +83,7 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
       <ScrollView style={styles.contentContainer}>
         <View style={styles.inputContainer}>
           <InputField
-            value=""
+            value={address}
             disabled
             icon={
               <Octicons name="location" size={16} color={colors.GRAY_500} />
@@ -97,6 +108,12 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
           returnKeyType="next"
           {...addPost.getTextInputProps('description')}
         />
+        <MarkerSelector
+          markerColor={markerColor}
+          onPressMarker={handleSelectMarker}
+          score={score}
+        />
+        <ScoreInput score={score} onChangeScore={handleChangeScore} />
       </ScrollView>
     </SafeAreaView>
   );

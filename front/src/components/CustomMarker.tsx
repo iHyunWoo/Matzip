@@ -1,12 +1,12 @@
-import {LatLng, Marker} from 'react-native-maps';
+import {LatLng, Marker, MyMapMarkerProps} from 'react-native-maps';
 import {StyleSheet, View} from 'react-native';
 import {colors} from '../constants';
 import {MarkerColor} from '../types/domain.ts';
 
-interface CustomMarkerProps {
-  coordinate: LatLng;
+interface CustomMarkerProps extends MyMapMarkerProps {
+  coordinate?: LatLng;
   color: MarkerColor;
-  score: number;
+  score?: number;
 }
 
 const colorHex = {
@@ -23,18 +23,24 @@ function CustomMarker({
   score = 5,
   ...props
 }: CustomMarkerProps) {
-  return (
-    <Marker coordinate={coordinate} {...props}>
-      <View style={styles.container}>
-        <View style={[styles.marker, {backgroundColor: colorHex[color]}]}>
-          <View style={[styles.eye, styles.leftEye]}></View>
-          <View style={[styles.eye, styles.rightEye]}></View>
-          {score > 3 && <View style={[styles.mouth, styles.good]} />}
-          {score === 3 && <View style={[styles.mouth, styles.soso]} />}
-          {score < 3 && <View style={[styles.mouth, styles.bad]} />}
-        </View>
+  const markerView = (
+    <View style={styles.container}>
+      <View style={[styles.marker, {backgroundColor: colorHex[color]}]}>
+        <View style={[styles.eye, styles.leftEye]}></View>
+        <View style={[styles.eye, styles.rightEye]}></View>
+        {score > 3 && <View style={[styles.mouth, styles.good]} />}
+        {score === 3 && <View style={[styles.mouth, styles.soso]} />}
+        {score < 3 && <View style={[styles.mouth, styles.bad]} />}
       </View>
+    </View>
+  );
+
+  return coordinate ? (
+    <Marker coordinate={coordinate} {...props}>
+      {markerView}
     </Marker>
+  ) : (
+    markerView
   );
 }
 
@@ -87,7 +93,6 @@ const styles = StyleSheet.create({
     marginTop: 13,
     width: 8,
     height: 8,
-
   },
   bad: {
     borderRadius: 12,
@@ -96,7 +101,7 @@ const styles = StyleSheet.create({
     borderBottomColor: 'rgba(255, 255, 255 / 0.01)',
     borderLeftColor: 'rgba(255, 255, 255 / 0.01)',
     borderRightColor: 'rgba(255, 255, 255 / 0.01)',
-  }
+  },
 });
 
 export default CustomMarker;

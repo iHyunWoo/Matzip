@@ -1267,8 +1267,29 @@ PODS:
     - React-Core
   - react-native-maps (1.8.3):
     - React-Core
-  - react-native-safe-area-context (5.1.0):
+  - react-native-safe-area-context (5.2.0):
     - React-Core
+  - react-native-slider (4.5.6):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - react-native-vector-icons (11.0.0):
     - DoubleConversion
     - glog
@@ -1600,7 +1621,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNGestureHandler (2.22.1):
+  - RNGestureHandler (2.24.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1623,7 +1644,7 @@ PODS:
     - Yoga
   - RNPermissions (5.2.5):
     - React-Core
-  - RNReanimated (3.16.7):
+  - RNReanimated (3.17.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1635,7 +1656,9 @@ PODS:
     - React-Fabric
     - React-featureflags
     - React-graphics
+    - React-hermes
     - React-ImageManager
+    - React-jsi
     - React-NativeModulesApple
     - React-RCTFabric
     - React-rendererdebug
@@ -1643,10 +1666,10 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNReanimated/reanimated (= 3.16.7)
-    - RNReanimated/worklets (= 3.16.7)
+    - RNReanimated/reanimated (= 3.17.1)
+    - RNReanimated/worklets (= 3.17.1)
     - Yoga
-  - RNReanimated/reanimated (3.16.7):
+  - RNReanimated/reanimated (3.17.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1658,7 +1681,9 @@ PODS:
     - React-Fabric
     - React-featureflags
     - React-graphics
+    - React-hermes
     - React-ImageManager
+    - React-jsi
     - React-NativeModulesApple
     - React-RCTFabric
     - React-rendererdebug
@@ -1666,9 +1691,9 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNReanimated/reanimated/apple (= 3.16.7)
+    - RNReanimated/reanimated/apple (= 3.17.1)
     - Yoga
-  - RNReanimated/reanimated/apple (3.16.7):
+  - RNReanimated/reanimated/apple (3.17.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1680,7 +1705,9 @@ PODS:
     - React-Fabric
     - React-featureflags
     - React-graphics
+    - React-hermes
     - React-ImageManager
+    - React-jsi
     - React-NativeModulesApple
     - React-RCTFabric
     - React-rendererdebug
@@ -1689,7 +1716,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNReanimated/worklets (3.16.7):
+  - RNReanimated/worklets (3.17.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1701,7 +1728,33 @@ PODS:
     - React-Fabric
     - React-featureflags
     - React-graphics
+    - React-hermes
     - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - RNReanimated/worklets/apple (= 3.17.1)
+    - Yoga
+  - RNReanimated/worklets/apple (3.17.1):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
     - React-NativeModulesApple
     - React-RCTFabric
     - React-rendererdebug
@@ -1710,7 +1763,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (4.6.0):
+  - RNScreens (4.9.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1780,6 +1833,7 @@ DEPENDENCIES:
   - react-native-google-maps (from `../node_modules/react-native-maps`)
   - react-native-maps (from `../node_modules/react-native-maps`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - "react-native-vector-icons (from `../node_modules/@react-native-vector-icons/common`)"
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -1909,6 +1963,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-maps"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-slider:
+    :path: "../node_modules/@react-native-community/slider"
   react-native-vector-icons:
     :path: "../node_modules/@react-native-vector-icons/common"
   React-nativeconfig:
@@ -2026,7 +2082,8 @@ SPEC CHECKSUMS:
   react-native-geolocation: 8559551683956a104cd6953a51f53edcef7a998f
   react-native-google-maps: e63e064f77df4af32655d05fbcd2f1ad1078db4a
   react-native-maps: a5f431a3eaaef69f2e6f8d39901fb3f2e9de931e
-  react-native-safe-area-context: 04803a01f39f31cc6605a5531280b477b48f8a88
+  react-native-safe-area-context: 849d7df29ecb2a7155c769c0b76849ba952c2aa3
+  react-native-slider: 88366698dc5f742efdb402abb3368c5c5e1b9c4e
   react-native-vector-icons: 65796d4c84c69cd93bd8d113f29a7d9552ef1752
   React-nativeconfig: cd0fbb40987a9658c24dab5812c14e5522a64929
   React-NativeModulesApple: 45187d13c68d47250a7416b18ff082c7cc07bff7
@@ -2058,10 +2115,10 @@ SPEC CHECKSUMS:
   ReactCodegen: 1baa534318b19e95fb0f02db0a1ae1e3c271944d
   ReactCommon: 6014af4276bb2debc350e2620ef1bd856b4d981c
   RNCMaskedView: 6d4bf14f158d1a93484edf30850cbbd7ccbb8668
-  RNGestureHandler: a883459e2f268dde0af479e0d6e73bc8662a3502
+  RNGestureHandler: ebb08ce5dfc9caff34ae9cda3ef0d18daae3a7ef
   RNPermissions: ef3e16eef81cf346685e63b7aab9e578327068c1
-  RNReanimated: 10df3198b328f8a0677fdaaa2b449db53cdbff40
-  RNScreens: e9bb7c3063237983e75d01bb45ce591cc4e7afc2
+  RNReanimated: d624c19fca5c509cab84bb727d8ac1c3c9d90063
+  RNScreens: de623eecde9991bf75034b80ff5b05b014f0ffdf
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 78d74e245ed67bb94275a1316cdc170b9b7fe884
 
