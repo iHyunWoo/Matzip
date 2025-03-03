@@ -22,6 +22,8 @@ import mapStyle from '../../style/mapStyle.ts';
 import CustomMarker from '../../components/CustomMarker.tsx';
 import {alerts} from '../../constants/messages.ts';
 import useGetMarkers from '../../hooks/queries/useGetMarkers.ts';
+import MarkerModal from "../../components/MarkerModal.tsx";
+import useModal from "../../hooks/useModal.ts";
 
 type Navigation = CompositeNavigationProp<
   StackNavigationProp<MapStackParamList>,
@@ -34,8 +36,24 @@ function MapHomeScreen() {
   const mapRef = useRef<MapView | null>(null);
   const {userLocation, isUserLocationError} = useUserLocation();
   const [selectLocation, setSelectLocation] = useState<LatLng | null>();
+  const [markerId, setMarkerId] = useState<number|null>(null);
   const {data: markers = []} = useGetMarkers();
+  const markerModal = useModal();
   usePermissions('LOCATION');
+
+  const moveMapView = (coordinate: LatLng) => {
+    mapRef.current?.animateToRegion({
+      ...coordinate,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
+    });
+  };
+
+  const handlePressMarker = (id: number, coordinate: LatLng) => {
+    moveMapView(coordinate);
+    setMarkerId(id);
+    markerModal.show();
+  };
 
   const handleLongPressMapView = ({nativeEvent}: LongPressEvent) => {
     setSelectLocation(nativeEvent.coordinate);
@@ -45,12 +63,7 @@ function MapHomeScreen() {
     if (isUserLocationError) {
       return;
     } else {
-      mapRef.current?.animateToRegion({
-        latitude: userLocation.latitude,
-        longitude: userLocation.longitude,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      });
+      moveMapView(userLocation);
     }
   };
 
@@ -84,15 +97,13 @@ function MapHomeScreen() {
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}>
-        {markers.map(marker => (
+        {markers.map(({id, color, score, ...coordinate}) => (
           <CustomMarker
-            key={marker.id}
-            color={marker.color}
-            score={marker.score}
-            coordinate={{
-              latitude: marker.latitude,
-              longitude: marker.longitude,
-            }}
+            key={id}
+            color={color}
+            score={score}
+            coordinate={coordinate}
+            onPress={() => handlePressMarker(id, coordinate)}
           />
         ))}
         {selectLocation && (
@@ -118,6 +129,8 @@ function MapHomeScreen() {
           />
         </Pressable>
       </View>
+
+      <MarkerModal markerId={markerId} isVisible={markerModal.isVisible} hide={markerModal.hide}/>
     </>
   );
 }

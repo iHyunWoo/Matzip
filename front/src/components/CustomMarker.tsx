@@ -1,12 +1,12 @@
 import {LatLng, Marker, MyMapMarkerProps} from 'react-native-maps';
 import {StyleSheet, View} from 'react-native';
 import {colors} from '../constants';
-import {MarkerColor} from '../types/domain.ts';
 
 interface CustomMarkerProps extends MyMapMarkerProps {
   coordinate?: LatLng;
   color: MarkerColor;
   score?: number;
+  onPress?: () => void;
 }
 
 const colorHex = {
@@ -21,6 +21,7 @@ function CustomMarker({
   coordinate,
   color,
   score = 5,
+  onPress,
   ...props
 }: CustomMarkerProps) {
   const markerView = (
@@ -36,13 +37,15 @@ function CustomMarker({
   );
 
   return coordinate ? (
-    <Marker coordinate={coordinate} {...props}>
+    <Marker coordinate={coordinate} {...props} onPress={onPress} >
       {markerView}
     </Marker>
   ) : (
     markerView
   );
 }
+
+import {MarkerColor} from '../types/domain.ts';
 
 const styles = StyleSheet.create({
   container: {
