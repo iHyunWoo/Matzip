@@ -1,5 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {
+  Image,
+  Platform,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -21,7 +23,11 @@ import useGetAddress from '../../hooks/useGetAddress.ts';
 import MarkerSelector from '../../components/MarkerSelector.tsx';
 import ScoreInput from '../../components/ScoreInput.tsx';
 import DatePickerOption from '../../components/DatePickerOption.tsx';
-import useModal from "../../hooks/useModal.ts";
+import useModal from '../../hooks/useModal.ts';
+import ImageInput from '../../components/ImageInput.tsx';
+import usePermissions from '../../hooks/usePermissions.ts';
+import useImagePicker from '../../hooks/useImagePicker.ts';
+import PreviewImageList from "../../components/PreviewImageList.tsx";
 
 type AddPostScreenProps = StackScreenProps<
   MapStackParamList,
@@ -44,6 +50,9 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
   const [score, setScore] = useState(5);
   const [date, setDate] = useState(new Date());
   const [isPicked, setIsPicked] = useState(false);
+  const imagePicker = useImagePicker({initialImages: []});
+
+  usePermissions('PHOTO');
 
   const dateOption = useModal();
   const address = useGetAddress(location);
@@ -85,7 +94,6 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
     setIsPicked(true);
     dateOption.hide();
   };
-
 
   useEffect(() => {
     navigation.setOptions({
@@ -134,6 +142,10 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
             score={score}
           />
           <ScoreInput score={score} onChangeScore={handleChangeScore} />
+          <View style={styles.imagesViewer}>
+            <ImageInput onChange={imagePicker.handleChange} />
+            <PreviewImageList imageUris={imagePicker.imageUris} onDelete={imagePicker.deleteImageUri} onChangeOrder={imagePicker.changeOrder} />
+          </View>
 
           <DatePickerOption
             isVisible={dateOption.isVisible}
@@ -159,6 +171,9 @@ const styles = StyleSheet.create({
   inputContainer: {
     gap: 20,
     marginBottom: 20,
+  },
+  imagesViewer: {
+    flexDirection: 'row',
   },
 });
 
