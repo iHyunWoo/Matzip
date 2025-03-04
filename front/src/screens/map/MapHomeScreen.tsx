@@ -19,10 +19,10 @@ import usePermissions from '../../hooks/usePermissions.ts';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import MaterialDesignIcons from '@react-native-vector-icons/material-design-icons';
 import mapStyle from '../../style/mapStyle.ts';
-import CustomMarker from '../../components/CustomMarker.tsx';
+import CustomMarker from '../../components/common/CustomMarker.tsx';
 import {alerts} from '../../constants/messages.ts';
 import useGetMarkers from '../../hooks/queries/useGetMarkers.ts';
-import MarkerModal from "../../components/MarkerModal.tsx";
+import MarkerModal from "../../components/map/MarkerModal.tsx";
 import useModal from "../../hooks/useModal.ts";
 
 type Navigation = CompositeNavigationProp<

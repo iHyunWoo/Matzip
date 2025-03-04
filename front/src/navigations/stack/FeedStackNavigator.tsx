@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 import {colors, feedNavigations} from '../../constants';
 import {createStackNavigator} from '@react-navigation/stack';
 import FeedHomeScreen from '../../screens/feed/FeedHomeScreen.tsx';
-import FeedHomeHeaderLeft from '../../components/FeedHomeHeaderLeft.tsx';
+import FeedHomeHeaderLeft from '../../components/feed/FeedHomeHeaderLeft.tsx';
 
 export type FeedStackParamList = {
   [feedNavigations.FEED_HOME]: undefined;

@@ -7,9 +7,9 @@ import {
   Text,
   View,
 } from 'react-native';
-import {ResponsePost} from '../api';
-import {getDateWithSeparator} from '../utils';
-import {colors} from '../constants';
+import {ResponsePost} from '../../api';
+import {getDateWithSeparator} from '../../utils';
+import {colors} from '../../constants';
 
 interface FeedItemProps {
   post: ResponsePost;

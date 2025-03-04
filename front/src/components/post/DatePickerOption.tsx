@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import DatePicker from 'react-native-date-picker';
-import {colors} from '../constants';
+import {colors} from '../../constants';
 
 interface DatePickerOptionProps {
   isVisible: boolean;

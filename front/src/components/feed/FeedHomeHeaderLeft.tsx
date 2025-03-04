@@ -1,12 +1,12 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import HeaderButton from './HeaderButton.tsx';
+import HeaderButton from '../common/HeaderButton.tsx';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import {CompositeNavigationProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {MainDrawerParamList} from '../navigations/drawer/MainDrawerNavigator.tsx';
-import {FeedStackParamList} from '../navigations/stack/FeedStackNavigator.tsx';
+import {MainDrawerParamList} from '../../navigations/drawer/MainDrawerNavigator.tsx';
+import {FeedStackParamList} from '../../navigations/stack/FeedStackNavigator.tsx';
 
 type FeedHomeHeaderLeftProps = CompositeNavigationProp<
   StackNavigationProp<FeedStackParamList>,

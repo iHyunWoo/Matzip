@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
-import FeedList from "../../components/FeedList.tsx";
+import FeedList from "../../components/feed/FeedList.tsx";
 
 function FeedHomeScreen() {
   return (

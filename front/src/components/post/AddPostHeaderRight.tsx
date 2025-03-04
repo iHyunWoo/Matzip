@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderButton from './HeaderButton.tsx';
+import HeaderButton from '../common/HeaderButton.tsx';
 
 function AddPostHeaderRight(onSubmit: () => void) {
   return <HeaderButton labelText="등록" onPress={onSubmit} />;

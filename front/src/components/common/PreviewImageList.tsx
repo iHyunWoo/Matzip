@@ -7,9 +7,9 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import {ImageUri} from '../types/domain.ts';
+import {ImageUri} from '../../types/domain.ts';
 import Ionicons from '@react-native-vector-icons/ionicons';
-import {colors} from '../constants';
+import {colors} from '../../constants';
 
 interface PreviewImageListProps {
   imageUris: ImageUri[];

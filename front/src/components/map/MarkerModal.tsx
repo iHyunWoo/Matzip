@@ -8,11 +8,11 @@ import {
   Image,
   Dimensions, Pressable, Platform,
 } from 'react-native';
-import useGetPost from '../hooks/queries/useGetPost.ts';
-import {colors} from '../constants';
-import CustomMarker from './CustomMarker.tsx';
+import useGetPost from '../../hooks/queries/useGetPost.ts';
+import {colors} from '../../constants';
+import CustomMarker from '../common/CustomMarker.tsx';
 import Octicons from '@react-native-vector-icons/octicons';
-import {getDateWithSeparator} from '../utils';
+import {getDateWithSeparator} from '../../utils';
 import MaterialDesignIcons from '@react-native-vector-icons/material-design-icons';
 
 interface MarkerModalProps {
